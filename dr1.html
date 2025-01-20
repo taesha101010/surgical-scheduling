@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surgical Scheduler</title>
+    <link rel="stylesheet" href="../dr2.css"> <!-- Link to the same CSS file -->
+</head>
+<body>
+    <div class="scheduler-container">
+        <h2>Schedule Surgery</h2>
+        <form id="schedulerForm">
+            <label for="doctor">Doctor Name:</label>
+            <input type="text" id="doctor" required>
+
+            <label for="operation">Surgical Operation:</label>
+            <input type="text" id="operation" required>
+
+            <label for="room">Operating Room:</label>
+            <select id="room">
+                <option value="Room 1">Room 1</option>
+                <option value="Room 2">Room 2</option>
+                <option value="Room 3">Room 3</option>
+            </select>
+
+            <label for="time">Surgical Time:</label>
+            <input type="datetime-local" id="time" required>
+
+            <label for="anesthesia">Anesthesia Type:</label>
+            <input type="text" id="anesthesia" required>
+
+            <label for="anesthesiologist">Anesthesiologist Name:</label>
+            <input type="text" id="anesthesiologist" required>
+
+            <label for="assistant_surgeon">Assistant Surgeon (if any):</label>
+            <input type="text" id="assistant_surgeon">
+
+            <label for="nurses">Nurses in the Operating Room:</label>
+            <input type="text" id="nurses" placeholder="Comma separated list of nurse names">
+
+            <label for="preoperative_events">Preoperative Events:</label>
+            <textarea id="preoperative_events" required></textarea>
+
+            <label for="postoperative_events">Postoperative Events:</label>
+            <textarea id="postoperative_events" required></textarea>
+
+            <label for="surgical_reports">Surgical Reports (URL or file path):</label>
+            <input type="text" id="surgical_reports">
+
+            <label for="remarks">Remarks from the Operating Room Doctors:</label>
+            <textarea id="remarks"></textarea>
+
+            <label for="drugs">Drugs (comma separated):</label>
+            <input type="text" id="drugs" placeholder="e.g., Drug1, Drug2, Drug3" required>
+
+            <label for="instruments">Instruments (comma separated):</label>
+            <input type="text" id="instruments" placeholder="e.g., Scalpels, Forceps" required>
+
+            <label for="materials">Materials (comma separated):</label>
+            <input type="text" id="materials" placeholder="e.g., Gauze, Surgical Sutures" required>
+
+            <button type="submit">Schedule Surgery</button>
+        </form>
+
+        <div id="surgeryList">
+            <!-- List of scheduled surgeries will appear here -->
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js"></script>
+    <script src="../dr4.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
